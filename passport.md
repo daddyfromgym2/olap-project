@@ -61,10 +61,17 @@ erDiagram
 ## 3. Главная метрика и меры
 
 * **Главная метрика:** Общий оборот продаж (`Total Revenue`).
-  * *Черновик SQL:* `SELECT SUM(revenue) FROM fact_orders;`
+  * **Эталонное число:** `39400.00`
+  * **Эталонный SQL-скрипт (из файла sql/canonical_metric.sql):**
+    ```sql
+    SELECT 
+        SUM(revenue) AS canonical_total_revenue 
+    FROM fact_orders;
+    ```
 * **Дополнительные меры:**
   * `quantity` (Количество проданных штук) — Аддитивная мера, можно применять `SUM`.
-  * `price` (Цена за штуку) — Неаддитивная мера, `SUM` применять **нельзя** (только `AVG`, `MIN`, `MAX`).
+  * `price` (Цена за штуку) — Неаддитивная мера, `SUM` применять нельзя (только `AVG`, `MIN`, `MAX`).
+
 
 ---
 
