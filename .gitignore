@@ -1,0 +1,6 @@
+duckdb.exe 
+*.db 
+*.mv.db 
+*.duckdb 
+__MACOSX/ 
+_stand/
